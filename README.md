@@ -69,6 +69,33 @@ Esta seção reúne algumas artes, miniaturas e telas utilizadas ou preparadas p
 
 ![Arte de overlay do Memoria7](imagens/overlay.png)
 
+
+### 🖌️ Novas artes e variações de overlays
+
+Também foram adicionadas **oito artes criadas ao longo de 2026**, que registram estudos visuais e variações de identidade para as transmissões. Mantive os nomes originais dos arquivos para não atribuir um jogo específico a uma imagem sem confirmação.
+
+<p align="center">
+<a href="imagens/ChatGPT%20Image%2013%20de%20ago.%20de%202026%2C%2020_45_06.png"><img src="imagens/ChatGPT%20Image%2013%20de%20ago.%20de%202026%2C%2020_45_06.png" width="250" alt="Arte adicional 1 do Memoria7 — ChatGPT Image 13 de ago. de 2026, 20_45_06.png" /></a>
+<a href="imagens/ChatGPT%20Image%2013%20de%20ago.%20de%202026%2C%2020_56_57.png"><img src="imagens/ChatGPT%20Image%2013%20de%20ago.%20de%202026%2C%2020_56_57.png" width="250" alt="Arte adicional 2 do Memoria7 — ChatGPT Image 13 de ago. de 2026, 20_56_57.png" /></a>
+</p>
+
+<p align="center">
+<a href="imagens/ChatGPT%20Image%2020%20de%20set.%20de%202026%2C%2012_06_14.png"><img src="imagens/ChatGPT%20Image%2020%20de%20set.%20de%202026%2C%2012_06_14.png" width="250" alt="Arte adicional 3 do Memoria7 — ChatGPT Image 20 de set. de 2026, 12_06_14.png" /></a>
+<a href="imagens/ChatGPT%20Image%2020%20de%20set.%20de%202026%2C%2013_14_21.png"><img src="imagens/ChatGPT%20Image%2020%20de%20set.%20de%202026%2C%2013_14_21.png" width="250" alt="Arte adicional 4 do Memoria7 — ChatGPT Image 20 de set. de 2026, 13_14_21.png" /></a>
+</p>
+
+<p align="center">
+<a href="imagens/ChatGPT%20Image%2021%20de%20set.%20de%202026%2C%2015_57_42%20(2).png"><img src="imagens/ChatGPT%20Image%2021%20de%20set.%20de%202026%2C%2015_57_42%20(2).png" width="250" alt="Arte adicional 5 do Memoria7 — ChatGPT Image 21 de set. de 2026, 15_57_42 (2).png" /></a>
+<a href="imagens/ChatGPT%20Image%2026%20de%20ago.%20de%202026%2C%2020_15_22.png"><img src="imagens/ChatGPT%20Image%2026%20de%20ago.%20de%202026%2C%2020_15_22.png" width="250" alt="Arte adicional 6 do Memoria7 — ChatGPT Image 26 de ago. de 2026, 20_15_22.png" /></a>
+</p>
+
+<p align="center">
+<a href="imagens/ChatGPT%20Image%2030%20de%20jun.%20de%202026%2C%2017_06_35.png"><img src="imagens/ChatGPT%20Image%2030%20de%20jun.%20de%202026%2C%2017_06_35.png" width="250" alt="Arte adicional 7 do Memoria7 — ChatGPT Image 30 de jun. de 2026, 17_06_35.png" /></a>
+<a href="imagens/Imagem%20do%20ChatGPT%2026%20de%20set.%20de%202026%2C%2009_22_31.png"><img src="imagens/Imagem%20do%20ChatGPT%2026%20de%20set.%20de%202026%2C%2009_22_31.png" width="250" alt="Arte adicional 8 do Memoria7 — Imagem do ChatGPT 26 de set. de 2026, 09_22_31.png" /></a>
+</p>
+
+> Estas são **artes estáticas**. Os arquivos HTML/CSS/JavaScript dos overlays poderão ser adicionados separadamente quando recuperados.
+
 ### 🎮 Miniaturas e artes de conteúdo
 
 | Dark Souls II | Hollow Knight |
@@ -83,7 +110,7 @@ Esta seção reúne algumas artes, miniaturas e telas utilizadas ou preparadas p
 
 [▶️ Conferir vídeo de encerramento do Memoria7](imagens/memoria7_short_encerramento_sem_marca.mp4)
 
-Outros arquivos visuais podem ser consultados na [pasta de imagens](imagens/). As artes adicionais permanecem preservadas com seus nomes originais.
+Outros arquivos visuais podem ser consultados na [pasta de imagens](imagens/). Os originais continuam disponíveis, sem renomeação ou exclusão.
 
 ---
 
@@ -110,7 +137,8 @@ Este repositório não deve armazenar senhas, tokens de serviços de streaming, 
 
 ## 🧭 Próximas melhorias
 
-- Documentar e incorporar overlays de outras transmissões conforme os arquivos forem recuperados;
+- Incorporar arquivos e configurações de novas lives (como Mario) após os testes no OBS e a revisão de conteúdos sensíveis;
+- Documentar e incorporar overlays antigos conforme os arquivos forem recuperados;
 - Separar melhor estilos e scripts em arquivos reutilizáveis;
 - Complementar a galeria com capturas reais das cenas no OBS;
 - Testar integração real com eventos de alertas, sem expor credenciais;
