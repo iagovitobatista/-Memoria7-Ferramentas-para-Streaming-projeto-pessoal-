@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Memória7 - Dark Souls II Overlay V2</title>
+<style>
+:root {
+  --purple:#7c3aed;
+  --purple2:#a855f7;
+  --purple3:#d8b4fe;
+  --panel:rgba(9,6,13,.82);
+  --line:rgba(192,132,252,.46);
+  --text:#f3edf8;
+  --muted:#a795b4;
+  --cam-w:300px;
+  --cam-r:28px;
+  --cam-t:34px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent;font-family:Segoe UI,Arial,sans-serif;color:var(--text)}
+#overlay{position:relative;width:1920px;height:1080px;background:transparent;pointer-events:none;overflow:hidden}
+
+#particles{position:absolute;inset:0;overflow:hidden}
+.particle{position:absolute;bottom:-20px;border-radius:50%;background:var(--purple2);opacity:.45;animation:rise linear infinite}
+@keyframes rise{0%{transform:translateY(0) scale(.55);opacity:0}15%{opacity:.65}100%{transform:translateY(-420px) translateX(42px) scale(.05);opacity:0}}
+
+.cam-wrap{position:absolute;right:var(--cam-r);top:var(--cam-t);width:var(--cam-w);transition:.25s}
+.brand-row{height:38px;display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:5px;opacity:.95}
+.logo-img{width:39px;height:39px;object-fit:cover;mix-blend-mode:screen;filter:saturate(1.1) contrast(1.08) drop-shadow(0 0 7px rgba(168,85,247,.35));}
+.brand-text{text-align:right;line-height:1}
+.brand-text small{display:block;font-size:8px;letter-spacing:2px;color:#9583a4;margin-bottom:3px}
+.brand-text strong{font-size:15px;letter-spacing:2.5px;font-weight:600;color:#eadcf5}
+
+.cam-frame{position:relative;width:100%;aspect-ratio:16/9;border:1.5px solid rgba(168,85,247,.62);background:rgba(5,3,7,.04);box-shadow:0 0 20px rgba(124,58,237,.17),inset 0 0 18px rgba(124,58,237,.05);
+clip-path:polygon(11px 0,calc(100% - 11px) 0,100% 11px,100% calc(100% - 11px),calc(100% - 11px) 100%,11px 100%,0 calc(100% - 11px),0 11px)}
+.cam-frame:before{content:"";position:absolute;inset:7px;border:1px solid rgba(216,180,254,.12)}
+.cam-glow{position:absolute;inset:-8px;opacity:.52;filter:blur(13px);background:radial-gradient(circle at 50% 100%,rgba(168,85,247,.28),transparent 60%);transition:.3s}
+.cam-label{position:absolute;right:10px;bottom:-12px;background:rgba(9,6,13,.93);border:1px solid rgba(168,85,247,.42);padding:4px 9px;font-size:9px;letter-spacing:1.5px;color:#dbc5ea}
+.cam-hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(220,200,235,.17);font-size:9px;letter-spacing:3px}
+
+.info-stack{margin-top:19px;display:grid;gap:5px}
+.panel{position:relative;background:var(--panel);border:1px solid rgba(168,85,247,.24);padding:8px 10px;backdrop-filter:blur(2px);
+clip-path:polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px)}
+.panel:before{content:"";position:absolute;left:0;top:0;width:2px;height:100%;background:linear-gradient(var(--purple3),transparent);opacity:.6}
+.eyebrow{font-size:8px;letter-spacing:1.7px;color:#a38db3}
+.event-name{font-size:11px;margin-top:2px;color:#f3eaf8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.souls{font-size:11px;color:#dbc5eb}
+.bar{height:4px;background:rgba(65,38,78,.7);margin-top:5px;overflow:hidden;border-radius:99px}
+.bar>span{display:block;height:100%;width:62%;background:linear-gradient(90deg,var(--purple),var(--purple3));box-shadow:0 0 10px rgba(168,85,247,.45);transition:width .6s}
+
+.bonfire{position:absolute;right:calc(var(--cam-r) + var(--cam-w) - 22px);top:calc(var(--cam-t) + 128px);width:70px;height:70px;opacity:.72;filter:drop-shadow(0 0 13px rgba(168,85,247,.32));transform-origin:50% 80%;transition:.25s}
+.bonfire .blade{position:absolute;left:33px;bottom:14px;width:4px;height:41px;background:linear-gradient(#b2abb7,#493d4d);transform:rotate(9deg);border-radius:3px}
+.bonfire .coal{position:absolute;left:19px;bottom:7px;width:37px;height:13px;background:radial-gradient(circle,#5f3474 0 25%,#1b111f 65%,transparent 66%)}
+.flame{position:absolute;bottom:15px;left:20px;width:31px;height:45px;background:radial-gradient(ellipse at 50% 80%,rgba(255,255,255,.7) 0 4%,#d8b4fe 9%,#a855f7 30%,rgba(124,58,237,.55) 55%,transparent 72%);clip-path:polygon(50% 0,62% 22%,77% 36%,70% 58%,88% 74%,62% 100%,38% 100%,12% 76%,30% 56%,24% 40%);animation:flicker 1.25s ease-in-out infinite alternate}
+@keyframes flicker{0%{transform:scale(.93,.87) rotate(-1deg);filter:brightness(.9)}100%{transform:scale(1.06,1.11) rotate(1deg);filter:brightness(1.25)}}
+
+#alert{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);text-align:center;opacity:0;transition:.35s;filter:drop-shadow(0 0 18px rgba(124,58,237,.38))}
+#alert.show{opacity:1;transform:translate(-50%,-50%) scale(1.02)}
+#alert .main{font-size:27px;letter-spacing:5px;color:#ead8fb;text-shadow:0 0 17px rgba(168,85,247,.72);font-weight:600}
+#alert .sub{margin-top:6px;font-size:13px;letter-spacing:1.5px;color:#c7b5d5}
+#alert .rule{width:210px;height:1px;background:linear-gradient(90deg,transparent,var(--purple3),transparent);margin:10px auto 0}
+
+.bottom-brand{position:absolute;left:28px;bottom:22px;display:flex;align-items:center;gap:8px;color:#8e7b99;letter-spacing:1.6px;font-size:9px;opacity:.65}
+.bottom-brand b{color:#d7c2e5;font-size:11px;font-weight:500}
+.dot{width:4px;height:4px;border-radius:50%;background:var(--purple2);box-shadow:0 0 8px rgba(168,85,247,.7)}
+
+.awaken .cam-frame{border-color:rgba(216,180,254,.95);box-shadow:0 0 33px rgba(168,85,247,.37),inset 0 0 32px rgba(124,58,237,.08)}
+.awaken .cam-glow{opacity:1;background:radial-gradient(circle at 50% 100%,rgba(192,132,252,.5),transparent 60%)}
+.awaken .bonfire{animation:burst .55s ease-in-out 3}
+@keyframes burst{50%{transform:scale(1.2);filter:drop-shadow(0 0 27px rgba(192,132,252,.75))}}
+.boss .cam-frame{border-color:rgba(244,114,182,.72);box-shadow:0 0 34px rgba(168,85,247,.4),0 0 62px rgba(124,58,237,.17)}
+.death #alert .main{color:#c9b8d2;text-shadow:0 0 13px rgba(88,55,105,.7)}
+
+/* Config panel - appears only when opened with T while using Interact in OBS */
+#config{position:absolute;left:28px;top:28px;width:330px;background:rgba(7,5,10,.96);border:1px solid rgba(168,85,247,.48);padding:14px;display:none;pointer-events:auto;box-shadow:0 0 30px rgba(0,0,0,.4)}
+#config.open{display:block}
+#config h3{font-size:14px;margin:0 0 10px;letter-spacing:1.3px;color:#e1c8f2}
+#config p{font-size:11px;color:#aa98b7;margin:5px 0 10px;line-height:1.4}
+.control{margin:9px 0}
+.control label{display:flex;justify-content:space-between;font-size:10px;color:#d0c1da;margin-bottom:4px}
+.control input[type=range]{width:100%}
+.buttons{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+#config button{padding:6px 8px;background:#160d1c;border:1px solid rgba(168,85,247,.34);color:#eadff2;cursor:pointer;font-size:10px}
+#config button:hover{background:#261330}
+.key{display:inline-block;border:1px solid rgba(168,85,247,.38);padding:1px 5px;color:#d8b4fe}
+.close-note{border-top:1px solid rgba(168,85,247,.18);padding-top:8px;margin-top:10px!important}
+</style>
+</head>
+<body>
+<div id="overlay">
+  <div id="particles"></div>
+
+  <div class="cam-wrap">
+    <div class="brand-row">
+      <div class="brand-text"><small>CANAL</small><strong>MEMÓRIA7</strong></div>
+      <span class="logo-img" aria-label="Memória7" style="display:inline-flex;align-items:center;justify-content:center;font-size:17px;font-weight:bold;color:#d8b4fe;">M7</span>
+    </div>
+
+    <div class="cam-frame">
+      <div class="cam-glow"></div>
+      <div class="cam-hint">WEBCAM</div>
+      <div class="cam-label">MEMÓRIA7 • BEARER OF THE CURSE</div>
+    </div>
+
+    <div class="info-stack">
+      <div class="panel">
+        <div class="eyebrow" id="eventTitle">ÚLTIMO SEGUIDOR</div>
+        <div class="event-name" id="eventName">— aguardando uma nova alma —</div>
+      </div>
+      <div class="panel">
+        <div class="row"><span class="eyebrow">ALMAS</span><span class="souls" id="souls">12.450</span></div>
+        <div class="bar"><span id="soulBar"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bonfire" aria-hidden="true">
+    <div class="blade"></div><div class="coal"></div><div class="flame"></div>
+  </div>
+
+  <div id="alert">
+    <div class="main" id="alertMain">NOVA ALMA DESCOBERTA</div>
+    <div class="sub" id="alertSub">Um guerreiro chegou à fogueira</div>
+    <div class="rule"></div>
+  </div>
+
+  <div class="bottom-brand"><span class="dot"></span><b>MEMÓRIA7</b><span>DARK SOULS II • LIVE</span></div>
+
+  <div id="config">
+    <h3>MEMÓRIA7 • CONFIGURAÇÃO</h3>
+    <p>Esse painel só serve para ajustar e testar. No OBS, clique com o botão direito na fonte do overlay → <b>Interagir</b>. Pressione <span class="key">T</span> para abrir/fechar.</p>
+
+    <div class="control">
+      <label><span>Tamanho da webcam</span><span id="sizeVal">300 px</span></label>
+      <input id="size" type="range" min="220" max="390" value="300">
+    </div>
+    <div class="control">
+      <label><span>Distância da direita</span><span id="rightVal">28 px</span></label>
+      <input id="right" type="range" min="10" max="500" value="28">
+    </div>
+    <div class="control">
+      <label><span>Distância do topo</span><span id="topVal">34 px</span></label>
+      <input id="top" type="range" min="10" max="700" value="34">
+    </div>
+
+    <div class="buttons">
+      <button data-event="follow">F1 • Follow</button>
+      <button data-event="sub">F2 • Sub</button>
+      <button data-event="donate">F3 • Donate</button>
+      <button data-event="boss">F4 • Boss</button>
+      <button data-event="death">F5 • Morreu</button>
+      <button id="reset">Reset posição</button>
+    </div>
+
+    <p class="close-note">Atalhos no modo Interagir: <b>F1</b> Follow • <b>F2</b> Sub • <b>F3</b> Donate • <b>F4</b> Boss • <b>F5</b> Você Morreu.</p>
+  </div>
+</div>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  const overlay = document.getElementById('overlay');
+  const eventTitle = document.getElementById('eventTitle');
+  const eventName = document.getElementById('eventName');
+  const soulsEl = document.getElementById('souls');
+  const soulBar = document.getElementById('soulBar');
+  const alertBox = document.getElementById('alert');
+  const alertMain = document.getElementById('alertMain');
+  const alertSub = document.getElementById('alertSub');
+  const config = document.getElementById('config');
+  const size = document.getElementById('size');
+  const right = document.getElementById('right');
+  const top = document.getElementById('top');
+  const sizeVal = document.getElementById('sizeVal');
+  const rightVal = document.getElementById('rightVal');
+  const topVal = document.getElementById('topVal');
+
+  let souls = 12450;
+  let alertTimer;
+
+  function loadCfg() {
+    const cfg = JSON.parse(localStorage.getItem('memoria7Cfg') || '{}');
+    size.value = cfg.size || 300;
+    right.value = cfg.right || 28;
+    top.value = cfg.top || 34;
+    applyCfg(false);
+  }
+  function applyCfg(save=true) {
+    root.style.setProperty('--cam-w', size.value + 'px');
+    root.style.setProperty('--cam-r', right.value + 'px');
+    root.style.setProperty('--cam-t', top.value + 'px');
+    sizeVal.textContent = size.value + ' px';
+    rightVal.textContent = right.value + ' px';
+    topVal.textContent = top.value + ' px';
+    if(save) localStorage.setItem('memoria7Cfg', JSON.stringify({size:size.value,right:right.value,top:top.value}));
+  }
+  [size,right,top].forEach(el=>el.addEventListener('input',()=>applyCfg()));
+
+  const particles = document.getElementById('particles');
+  for(let i=0;i<24;i++) {
+    const p=document.createElement('i');
+    p.className='particle';
+    p.style.left=(82+Math.random()*17)+'%';
+    p.style.animationDuration=(4+Math.random()*7)+'s';
+    p.style.animationDelay=(-Math.random()*9)+'s';
+    p.style.opacity=(.12+Math.random()*.42).toFixed(2);
+    p.style.width=p.style.height=(2+Math.random()*2)+'px';
+    particles.appendChild(p);
+  }
+
+  function awaken(duration=2600) {
+    overlay.classList.add('awaken');
+    setTimeout(()=>overlay.classList.remove('awaken'),duration);
+  }
+  function showAlert(main,sub,duration=2800) {
+    clearTimeout(alertTimer);
+    alertMain.textContent=main;
+    alertSub.textContent=sub;
+    alertBox.classList.add('show');
+    alertTimer=setTimeout(()=>alertBox.classList.remove('show'),duration);
+  }
+  function addSouls(amount) {
+    souls+=amount;
+    soulsEl.textContent=souls.toLocaleString('pt-BR');
+    const pct=Math.max(12,Math.min(100,48+(souls%5000)/80));
+    soulBar.style.width=pct+'%';
+  }
+  function handleEvent(type,data={}) {
+    const name=data.name||'Nova alma';
+    if(type==='follow') {
+      eventTitle.textContent='ÚLTIMO SEGUIDOR'; eventName.textContent=name;
+      addSouls(120); awaken(); showAlert('NOVA ALMA DESCOBERTA',name+' chegou à fogueira');
+    }
+    if(type==='sub') {
+      eventTitle.textContent='NOVO SUB'; eventName.textContent=name;
+      addSouls(300); awaken(3200); showAlert('ALMA FORTALECIDA',name+' tornou-se um aliado',3200);
+    }
+    if(type==='donate') {
+      const value=data.value||'R$ 10,00';
+      eventTitle.textContent='ÚLTIMO DONATE'; eventName.textContent=name+' • '+value;
+      addSouls(500); awaken(3400); showAlert('OFERENDA À FOGUEIRA',name+' enviou '+value,3400);
+    }
+    if(type==='boss') {
+      overlay.classList.add('boss'); showAlert('BOSS FIGHT','A fogueira tornou-se instável...',2600);
+      setTimeout(()=>overlay.classList.remove('boss'),6000);
+    }
+    if(type==='death') {
+      overlay.classList.add('death'); showAlert('VOCÊ MORREU','MEMÓRIA7 caiu em batalha',2600);
+      setTimeout(()=>overlay.classList.remove('death'),3000);
+    }
+  }
+
+  window.Memoria7Overlay = {
+    trigger:handleEvent,
+    follow:name=>handleEvent('follow',{name}),
+    sub:name=>handleEvent('sub',{name}),
+    donate:(name,value)=>handleEvent('donate',{name,value}),
+    boss:()=>handleEvent('boss'),
+    death:()=>handleEvent('death')
+  };
+
+  config.addEventListener('click',e=>{
+    const btn=e.target.closest('[data-event]'); if(!btn)return;
+    const type=btn.dataset.event;
+    if(type==='follow')handleEvent(type,{name:'Guerreiro_92'});
+    if(type==='sub')handleEvent(type,{name:'KnightOfDrangleic'});
+    if(type==='donate')handleEvent(type,{name:'PraiseTheSun',value:'R$ 10,00'});
+    if(type==='boss'||type==='death')handleEvent(type);
+  });
+  document.getElementById('reset').addEventListener('click',()=>{
+    size.value=300; right.value=28; top.value=34; applyCfg();
+  });
+  window.addEventListener('keydown',e=>{
+    if(e.key.toLowerCase()==='t') config.classList.toggle('open');
+    if(e.key==='F1'){e.preventDefault();handleEvent('follow',{name:'Guerreiro_92'})}
+    if(e.key==='F2'){e.preventDefault();handleEvent('sub',{name:'KnightOfDrangleic'})}
+    if(e.key==='F3'){e.preventDefault();handleEvent('donate',{name:'PraiseTheSun',value:'R$ 10,00'})}
+    if(e.key==='F4'){e.preventDefault();handleEvent('boss')}
+    if(e.key==='F5'){e.preventDefault();handleEvent('death')}
+  });
+  loadCfg();
+})();
+</script>
+</body>
+</html>
