@@ -1,0 +1,58 @@
+MEMÓRIA7 – OVERLAY INTERATIVO V2 | CONFIGURAÇÃO RÁPIDA
+
+1) NO OBS, PRIMEIRO ARRUME O JOGO
+- Configurações > Vídeo:
+  Resolução de Base: 1920x1080
+  Resolução de Saída: 1920x1080
+- Selecione a fonte do Dark Souls II.
+- Botão direito > Transformar > Ajustar à tela.
+  Atalho no Windows: Ctrl+F.
+- O jogo deve preencher a tela antes de colocar webcam/overlay.
+
+2) ADICIONE O OVERLAY
+- Fontes > + > Navegador.
+- Marque Arquivo local.
+- Selecione: Memoria7_DarkSouls2_Overlay_V2.html
+- Largura: 1920
+- Altura: 1080
+- Deixe essa fonte ACIMA da webcam e do jogo.
+
+3) ADICIONE / ENCAIXE A WEBCAM
+Ordem recomendada nas Fontes:
+  1. Overlay Memória7  (topo)
+  2. Webcam
+  3. Captura do Dark Souls II (fundo)
+
+- Selecione a webcam.
+- Reduza até caber DENTRO da moldura.
+- Segure ALT enquanto arrasta as bordas para recortar o excesso.
+- O overlay é só a moldura; a câmera real fica atrás dele.
+
+4) AJUSTE O OVERLAY SEM EDITAR CÓDIGO
+- Botão direito no Overlay Memória7 > Interagir.
+- Clique na janela que abrir.
+- Pressione T.
+- Aparecerá um painel de configuração.
+- Ajuste:
+  • Tamanho da webcam
+  • Distância da direita
+  • Distância do topo
+- Os ajustes ficam salvos no navegador do OBS.
+- Pressione T novamente antes da live para esconder o painel.
+
+5) TESTE AS ANIMAÇÕES
+Com a janela Interagir selecionada:
+  F1 = Follow
+  F2 = Sub
+  F3 = Donate
+  F4 = Boss Fight
+  F5 = Você Morreu
+
+Também existem botões no painel aberto com T.
+
+6) IMPORTANTE
+Follow/Sub/Donate ainda estão em modo de teste.
+Para reagirem automaticamente a pessoas reais, o próximo passo é integrar o overlay ao sistema de alertas da plataforma/serviço usado na live.
+
+DICA
+Primeiro deixe o Dark Souls II ocupando 100% da cena. Depois encaixe a webcam. Por último coloque o overlay.
