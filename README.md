@@ -1,2 +1,81 @@
-# -Memoria7-Ferramentas-para-Streaming-projeto-pessoal-
-Desenvolvimento de overlays, alertas e interfaces personalizadas para transmissões ao vivo, utilizando HTML, CSS, JavaScript e integração com OBS Studio.
+<h1 align="center">🎮 Memoria7 — Ferramentas para Streaming</h1>
+<p align="center"><strong>Projeto pessoal de desenvolvimento Front-End aplicado a transmissões ao vivo</strong></p>
+<p align="center">
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css&logoColor=white"/>
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+<img src="https://img.shields.io/badge/OBS%20Studio-302E31?style=for-the-badge&logo=obsstudio&logoColor=white"/>
+</p>
+
+## 📺 Sobre o projeto
+
+O **Memoria7 (M7)** é meu projeto pessoal de conteúdo sobre games, nostalgia e experiências compartilhadas em família. Neste repositório, reúno interfaces e recursos técnicos desenvolvidos para as transmissões, colocando em prática conceitos de **HTML, CSS, JavaScript, animações e integração visual com o OBS Studio**.
+
+Este portfólio documenta tanto a criação de componentes visuais quanto os desafios de configurar e testar elementos em cenas reais de streaming.
+
+## 🚀 Projetos e recursos
+
+### ⚔️ Dark Souls II — overlay interativo
+
+- [Overlay original em HTML](overlays/dark-souls-2/memoria7_overlay.html)
+- [Overlay V2 com painel e efeitos](overlays/dark-souls-2/Memoria7_DarkSouls2_Overlay_V2.html)
+- [Guia de configuração e testes no OBS](docs/GUIA_MEMORIA7_OVERLAY_V2.txt)
+
+**Recursos explorados:** composição de uma tela 1920 × 1080, moldura para webcam, painéis visuais, animações em CSS, ajustes de posicionamento e simulações de alertas em JavaScript.
+
+**Atalhos do overlay V2** (na janela **Interagir** da fonte Navegador):
+
+| Tecla | Função |
+| --- | --- |
+| T | Mostrar/ocultar painel de configuração |
+| F1 | Simular novo seguidor |
+| F2 | Simular inscrição |
+| F3 | Simular doação |
+| F4 | Simular batalha contra chefe |
+| F5 | Simular derrota |
+
+> ⚠️ Os alertas de seguidor, inscrição e doação funcionam em **modo de demonstração**. Este código não comprova integração automática com eventos reais da Twitch, do YouTube ou do StreamElements.
+
+> ℹ️ Para manter o repositório leve, o arquivo V2 publicado usa a marca textual **M7** no lugar da imagem do logotipo incorporada ao arquivo de trabalho original. O restante do código foi mantido.
+
+### 🏎️ Need for Speed: Most Wanted
+Projeto de lives e vídeos do canal. **Documentação e arquivos específicos de overlay pendentes de recuperação.**
+
+### 🗡️ Hollow Knight
+Conteúdo de transmissões e vídeos curtos. **Arquivos técnicos de overlay pendentes de recuperação.**
+
+### 👨‍👦 Lives em família — Cuphead, Mario e outros jogos
+Experiências de transmissões com meu filho, envolvendo identidade visual e organização de cenas. **Arquivos de overlays e alertas específicos ainda não publicados neste repositório.**
+
+## 🛠️ Como usar o overlay com OBS Studio
+
+1. Configure uma cena do OBS em **1920 × 1080**.
+2. Adicione o jogo à cena e ajuste-o à tela.
+3. Adicione uma **Fonte Navegador** e marque a opção **Arquivo local**.
+4. Selecione o arquivo HTML do overlay e defina largura **1920** e altura **1080**.
+5. Posicione a webcam atrás da moldura do overlay, conforme as fontes da cena.
+6. Para testar as interações, use **Interagir** na fonte Navegador e os atalhos da tabela acima.
+
+O guia detalhado está em [docs/GUIA_MEMORIA7_OVERLAY_V2.txt](docs/GUIA_MEMORIA7_OVERLAY_V2.txt).
+
+## 🧠 Conhecimentos aplicados
+
+`HTML semântico` · `CSS` · `Animações` · `JavaScript` · `Interfaces personalizadas` · `Testes de interação` · `OBS Studio` · `Organização de projetos`
+
+Na produção do canal também utilizo **Filmora** para edição de vídeos. Essa atividade é complementar ao desenvolvimento dos overlays.
+
+## 🔐 Segurança e uso responsável
+
+Este repositório não deve armazenar senhas, tokens de serviços de streaming, dados pessoais de seguidores ou credenciais de integração. Imagens, músicas e outros elementos de jogos de terceiros exigem atenção às licenças e direitos autorais.
+
+## 🧭 Próximas melhorias
+
+- Documentar e incorporar overlays de outras transmissões conforme os arquivos forem recuperados;
+- Separar melhor estilos e scripts em arquivos reutilizáveis;
+- Criar capturas de tela e demonstrações das cenas;
+- Testar integração real com eventos de alertas, sem expor credenciais;
+- Explorar um projeto de análise de métricas do canal usando SQL, Python ou Power BI.
+
+---
+
+<p align="center"><em>O tempo muda a gente, mas memórias boas nunca dão reset.</em> 💜</p>
