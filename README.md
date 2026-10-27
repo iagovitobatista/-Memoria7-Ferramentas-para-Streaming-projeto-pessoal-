@@ -131,6 +131,36 @@ O guia detalhado está em [docs/GUIA_MEMORIA7_OVERLAY_V2.txt](docs/GUIA_MEMORIA7
 
 Na produção do canal também utilizo **Filmora** para edição de vídeos. Essa atividade é complementar ao desenvolvimento dos overlays.
 
+## 🤖 IA como aceleradora do processo criativo
+
+No Memoria7, utilizamos ferramentas de **inteligência artificial como apoio e aceleradoras** do processo de criação, sem substituir a revisão, os testes e as decisões criativas realizadas no projeto.
+
+- **ChatGPT:** apoio na estruturação de ideias, escrita, desenvolvimento e ajustes de HTML, CSS e JavaScript, além de documentação e resolução de problemas.
+- **Claude:** apoio complementar à produtividade, à exploração de soluções e ao trabalho com tecnologia.
+- **Dreamina:** apoio à criação e à experimentação de elementos visuais para o canal.
+
+Os resultados são selecionados, adaptados e testados conforme as necessidades reais das transmissões.
+
+## 🎛️ Ferramentas de transmissão e edição
+
+| Ferramenta | Papel no fluxo de produção |
+| --- | --- |
+| **OBS Studio** | Organização de cenas, captura de vídeo e áudio e utilização de overlays como fontes de navegador |
+| **StreamElements** | Recursos de streaming, elementos e alertas para transmissões |
+| **Restream** | Apoio ao fluxo de transmissão para diferentes plataformas |
+| **Ghost Chat** | Acompanhamento de mensagens e interação durante as lives |
+| **Filmora** | Edição, montagem e finalização de vídeos e cortes |
+
+Essas ferramentas fazem parte do fluxo de produção do canal; seu uso não significa que todas tenham integração programática direta com os overlays deste repositório.
+
+## ▶️ Canal oficial
+
+Conheça o **Memoria7** no YouTube, onde os projetos visuais e as experiências de streaming ganham vida:
+
+🎮 **[Acessar o canal Memoria7 no YouTube](https://www.youtube.com/channel/UCpyj0VLDMkHZHf2uR8GVXgA)**
+
+---
+
 ## 🔐 Segurança e uso responsável
 
 Este repositório não deve armazenar senhas, tokens de serviços de streaming, dados pessoais de seguidores ou credenciais de integração. Imagens, músicas e outros elementos de jogos de terceiros exigem atenção às licenças e direitos autorais.
