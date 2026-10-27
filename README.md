@@ -39,13 +39,53 @@ Este portfólio documenta tanto a criação de componentes visuais quanto os des
 > ℹ️ Para manter o repositório leve, o arquivo V2 publicado usa a marca textual **M7** no lugar da imagem do logotipo incorporada ao arquivo de trabalho original. O restante do código foi mantido.
 
 ### 🏎️ Need for Speed: Most Wanted
-Projeto de lives e vídeos do canal. **Documentação e arquivos específicos de overlay pendentes de recuperação.**
+Projeto de lives e vídeos do canal. Já temos uma **tela de pausa** na galeria visual. **O código do overlay interativo específico ainda está pendente de recuperação.**
 
 ### 🗡️ Hollow Knight
-Conteúdo de transmissões e vídeos curtos. **Arquivos técnicos de overlay pendentes de recuperação.**
+Conteúdo de transmissões e vídeos curtos, agora com **arte visual disponível na galeria**. **Arquivos técnicos de overlay pendentes de recuperação.**
 
 ### 👨‍👦 Lives em família — Cuphead, Mario e outros jogos
 Experiências de transmissões com meu filho, envolvendo identidade visual e organização de cenas. **Arquivos de overlays e alertas específicos ainda não publicados neste repositório.**
+
+## 🖼️ Galeria visual — materiais já publicados
+
+Esta seção reúne algumas artes, miniaturas e telas utilizadas ou preparadas para o canal. **As imagens demonstram o trabalho de identidade visual e produção; não substituem os arquivos HTML dos overlays interativos.**
+
+### 💜 Identidade do Memoria7
+
+![Logo Gamer M7 com Texto MEMORIA7](imagens/Logo%20Gamer%20M7%20com%20Texto%20MEMORIA7.png)
+
+### 🎥 Cenas de transmissão
+
+**Tela de início de live**
+
+![Tela Live já vai começar](imagens/Live%20ja%20vai%20come%C3%A7ar.png)
+
+**Tela de pausa para Need for Speed: Most Wanted**
+
+![Tela de pausa da live Most Wanted](imagens/pausa%20live%20most.png)
+
+**Arte de overlay**
+
+![Arte de overlay do Memoria7](imagens/overlay.png)
+
+### 🎮 Miniaturas e artes de conteúdo
+
+| Dark Souls II | Hollow Knight |
+| --- | --- |
+| ![Miniatura Dark Souls II](imagens/thumb%20dark%20souls%202.png) | ![Arte Hollow Knight](imagens/hollow%20knigth.png) |
+
+| Kingdom Hearts | Outra miniatura do canal |
+| --- | --- |
+| ![Miniatura Kingdom Hearts](imagens/A%20dor%20das%20%C3%BAltimas%20vezes%20Kingdom%20Hearts%20e%20as%20despedidas%20que%20nos%20mudam%20%F0%9F%95%B0%EF%B8%8F-Miniatura.jpg) | ![Miniatura thumb mody](imagens/thumb%20mody.png) |
+
+### 🎞️ Vídeo de encerramento
+
+[▶️ Conferir vídeo de encerramento do Memoria7](imagens/memoria7_short_encerramento_sem_marca.mp4)
+
+Outros arquivos visuais podem ser consultados na [pasta de imagens](imagens/). As artes adicionais permanecem preservadas com seus nomes originais.
+
+---
 
 ## 🛠️ Como usar o overlay com OBS Studio
 
@@ -72,7 +112,7 @@ Este repositório não deve armazenar senhas, tokens de serviços de streaming, 
 
 - Documentar e incorporar overlays de outras transmissões conforme os arquivos forem recuperados;
 - Separar melhor estilos e scripts em arquivos reutilizáveis;
-- Criar capturas de tela e demonstrações das cenas;
+- Complementar a galeria com capturas reais das cenas no OBS;
 - Testar integração real com eventos de alertas, sem expor credenciais;
 - Explorar um projeto de análise de métricas do canal usando SQL, Python ou Power BI.
 
