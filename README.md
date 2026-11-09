@@ -44,6 +44,10 @@ Projeto de lives e vídeos do canal. Já temos uma **tela de pausa** na galeria 
 ### 🗡️ Hollow Knight
 Conteúdo de transmissões e vídeos curtos, agora com **arte visual disponível na galeria**. **Arquivos técnicos de overlay pendentes de recuperação.**
 
+### 🕹️ Super Nintendo — vídeo nostálgico
+
+O projeto **“Quando a felicidade cabia em uma fita”** ganhou uma coleção de **oito artes** na pasta `imagens/super nintendo/`. Veja a [galeria dedicada](#%EF%B8%8F-super-nintendo--quando-a-felicidade-cabia-em-uma-fita), que apresenta as imagens e o processo de criação para o canal.
+
 ### 👨‍👦 Lives em família — Cuphead, Mario e outros jogos
 Experiências de transmissões com meu filho, envolvendo identidade visual e organização de cenas. **Arquivos de overlays e alertas específicos ainda não publicados neste repositório.**
 
@@ -111,6 +115,39 @@ Também foram adicionadas **oito artes criadas ao longo de 2026**, que registram
 [▶️ Conferir vídeo de encerramento do Memoria7](imagens/memoria7_short_encerramento_sem_marca.mp4)
 
 Outros arquivos visuais podem ser consultados na [pasta de imagens](imagens/). Os originais continuam disponíveis, sem renomeação ou exclusão.
+
+---
+
+## 🕹️ Super Nintendo — Quando a felicidade cabia em uma fita
+
+Projeto visual desenvolvido para um vídeo do **Memoria7** que revisita as lembranças do Super Nintendo: cartuchos, aventuras, momentos em família, brincadeiras e a continuidade dessas memórias entre gerações.
+
+As oito artes da pasta [`imagens/super nintendo/`](imagens/super%20nintendo/) representam diferentes trechos e ideias da narrativa. O acervo foi criado com apoio de ferramentas de IA, direção criativa, seleção de cenas e ajustes para produção audiovisual.
+
+<table>
+<tr>
+<td align="center" width="50%"><a href="imagens/super%20nintendo/Mem%C3%B3rias%20de%20uma%20Gera%C3%A7%C3%A3o%20Super%20Nintendo.png"><img src="imagens/super%20nintendo/Mem%C3%B3rias%20de%20uma%20Gera%C3%A7%C3%A3o%20Super%20Nintendo.png" alt="Memórias de uma geração" width="320"/></a><br/><sub>Memórias de uma geração</sub></td>
+<td align="center" width="50%"><a href="imagens/super%20nintendo/Mem%C3%B3rias%20Pixeladas%20na%20Sala%20de%20Jogos.png"><img src="imagens/super%20nintendo/Mem%C3%B3rias%20Pixeladas%20na%20Sala%20de%20Jogos.png" alt="Memórias pixeladas" width="320"/></a><br/><sub>Memórias pixeladas</sub></td>
+</tr>
+<tr>
+<td align="center" width="50%"><a href="imagens/super%20nintendo/Noite%20Retr%C3%B4%20em%20Fam%C3%ADlia%20Gamer.png"><img src="imagens/super%20nintendo/Noite%20Retr%C3%B4%20em%20Fam%C3%ADlia%20Gamer.png" alt="Noite retrô em família" width="320"/></a><br/><sub>Noite retrô em família</sub></td>
+<td align="center" width="50%"><a href="imagens/super%20nintendo/Pai%20e%20Filho%20no%20Reino%20dos%20Games%20Retro.png"><img src="imagens/super%20nintendo/Pai%20e%20Filho%20no%20Reino%20dos%20Games%20Retro.png" alt="Pai e filho nos games" width="320"/></a><br/><sub>Pai e filho nos games</sub></td>
+</tr>
+<tr>
+<td align="center" width="50%"><a href="imagens/super%20nintendo/Portal%20do%20Tempo%20no%20Santu%C3%A1rio%20Retr%C3%B4%20(1).png"><img src="imagens/super%20nintendo/Portal%20do%20Tempo%20no%20Santu%C3%A1rio%20Retr%C3%B4%20(1).png" alt="Portal do tempo" width="320"/></a><br/><sub>Portal do tempo</sub></td>
+<td align="center" width="50%"><a href="imagens/super%20nintendo/Aventuras%20ao%20Redor%20do%20Mapa.png"><img src="imagens/super%20nintendo/Aventuras%20ao%20Redor%20do%20Mapa.png" alt="Aventuras e imaginação" width="320"/></a><br/><sub>Aventuras e imaginação</sub></td>
+</tr>
+<tr>
+<td align="center" width="50%"><a href="imagens/super%20nintendo/Quarto%20Retr%C3%B4_%20Qual%20Jogo%20Voc%C3%AA%20Odiava_.png"><img src="imagens/super%20nintendo/Quarto%20Retr%C3%B4_%20Qual%20Jogo%20Voc%C3%AA%20Odiava_.png" alt="Pergunta ao público" width="320"/></a><br/><sub>Pergunta ao público</sub></td>
+<td align="center" width="50%"><a href="imagens/super%20nintendo/Sala%20Gamer%20Retr%C3%B4%20em%20Mem%C3%B3ria7.png"><img src="imagens/super%20nintendo/Sala%20Gamer%20Retr%C3%B4%20em%20Mem%C3%B3ria7.png" alt="Sala gamer Memoria7" width="320"/></a><br/><sub>Sala gamer Memoria7</sub></td>
+</tr>
+</table>
+
+**Fluxo de produção:** concepção do roteiro e direção visual → geração e seleção das artes → preparação de sequências para animação no Dreamina → edição no Filmora → publicação do conteúdo no YouTube.
+
+**Overlay de live:** estamos preparando uma nova composição temática para as transmissões. A arte estática e o código configurável do OBS serão documentados separadamente quando os respectivos arquivos forem adicionados ao repositório. No momento, não há um overlay novo de Super Nintendo na pasta `overlays/`.
+
+> O material reúne imagens autorais/geradas para o projeto e referências à cultura dos videogames. A inclusão no portfólio documenta o processo criativo, sem declarar propriedade sobre personagens ou marcas de jogos de terceiros.
 
 ---
 
